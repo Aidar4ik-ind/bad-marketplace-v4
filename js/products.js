@@ -7,7 +7,7 @@ const productsData = [
         price: 1290,
         tags: ["магний", "стресс", "сон", "нервы"],
         category: "stress",
-        image: "https://unlimbot.hb.ru-msk.vkcloud-storage.ru/image/1/1d0d91df-6f78-4aa2-8cb9-57251fd3fa4d-e0c15c044b2f4d48af9253c5e15e3a78.png"
+        image: "b6ExtraPure.png"
     },
     {
         id: 2,
