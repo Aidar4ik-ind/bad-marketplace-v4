@@ -29,7 +29,7 @@ function initSearch() {
 
 // Инициализация фильтров
 function initFilters() {
-    const allTags = Products.getAllTags();
+    const allTags = Products.getElementsByTagName();
     const container = document.getElementById('filterTags');
     
     if (!container) return;
