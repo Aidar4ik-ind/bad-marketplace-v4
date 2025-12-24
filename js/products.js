@@ -206,7 +206,7 @@ const productsData = [
         price: 720,
         tags: ["пищеварение", "имбирь"],
         category: "digestion",
-        image: "https://images.unsplash.com/photo-1608039755401-742074f0548d?w=400&h=300&fit=crop"
+        image: "image//photo-1608039755401-742074f0548d?w=400&h=300&fit=crop"
     },
     {
         id: 24,
