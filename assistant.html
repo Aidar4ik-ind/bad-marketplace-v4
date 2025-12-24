@@ -369,9 +369,11 @@
         }
 
         function addToCart(productId) {
-            if (window.cart && cart.add) {
-                cart.add(productId);
-                cart.showNotification('Товар добавлен в корзину!', 'success');
+            if (typeof addToCart === 'function') {
+                window.addToCart(productId);
+                updateCartCounter();
+            } else if (window.cart && window.cart.add) {
+                window.cart.add(productId);
                 updateCartCounter();
             }
         }
