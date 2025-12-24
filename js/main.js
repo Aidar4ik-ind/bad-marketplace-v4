@@ -29,13 +29,23 @@ function initSearch() {
 
 // Инициализация фильтров
 function initFilters() {
-    const allTags = Products.getElementsByTagName();
+    const allProducts = Products.getAll();
+    
+    // Собираем все уникальные теги из всех продуктов
+    const allTags = new Set();
+    allProducts.forEach(product => {
+        product.tags.forEach(tag => allTags.add(tag));
+    });
+    
     const container = document.getElementById('filterTags');
     
     if (!container) return;
     
+    // Очищаем контейнер
+    container.innerHTML = '';
+    
     // Создаем кнопки для каждого тега
-    allTags.forEach(tag => {
+    Array.from(allTags).forEach(tag => {
         const button = document.createElement('button');
         button.type = 'button';
         button.className = 'btn btn-outline-secondary btn-sm me-2 mb-2';
@@ -50,8 +60,14 @@ function initFilters() {
     resetBtn.className = 'btn btn-outline-danger btn-sm mb-2';
     resetBtn.textContent = 'Сбросить все';
     resetBtn.onclick = () => {
-        document.getElementById('searchInput').value = '';
+        const searchInput = document.getElementById('searchInput');
+        if (searchInput) searchInput.value = '';
         displayAllProducts();
+        
+        // Сбрасываем активные кнопки
+        document.querySelectorAll('#filterTags .btn').forEach(btn => {
+            btn.classList.remove('active');
+        });
     };
     container.appendChild(resetBtn);
 }
@@ -98,6 +114,12 @@ function displayAllProducts() {
     if (container) {
         renderProducts(products, container);
         
+        // Обновляем счетчик товаров
+        const productsCount = document.getElementById('productsCount');
+        if (productsCount) {
+            productsCount.textContent = products.length;
+        }
+        
         // Сбрасываем активные кнопки
         document.querySelectorAll('#filterTags .btn').forEach(btn => {
             btn.classList.remove('active');
@@ -119,7 +141,18 @@ function renderProducts(products, container) {
                 </div>
             </div>
         `;
+        // Обновляем счетчик товаров
+        const productsCount = document.getElementById('productsCount');
+        if (productsCount) {
+            productsCount.textContent = '0';
+        }
         return;
+    }
+    
+    // Обновляем счетчик товаров
+    const productsCount = document.getElementById('productsCount');
+    if (productsCount) {
+        productsCount.textContent = products.length;
     }
     
     container.innerHTML = products.map(product => `
@@ -162,5 +195,13 @@ function addToCart(productId) {
     if (window.cart && cart.add) {
         cart.add(productId);
         cart.showNotification('Товар добавлен в корзину!', 'success');
+        updateCartCounter();
+    }
+}
+
+// Функция обновления счетчика корзины
+function updateCartCounter() {
+    if (window.cart && cart.updateCounter) {
+        cart.updateCounter();
     }
 }

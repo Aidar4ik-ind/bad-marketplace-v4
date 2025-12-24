@@ -37,6 +37,7 @@ class Cart {
         }
         
         this.save();
+        this.showNotification('Товар добавлен в корзину!', 'success');
         return this.items;
     }
     
@@ -93,12 +94,22 @@ class Cart {
         
         counters.forEach(counter => {
             counter.textContent = count;
-            counter.style.display = count > 0 ? 'inline-block' : 'none';
+            // Показываем бейдж только если есть товары
+            if (counter.id === 'cartCounter') {
+                counter.style.display = count > 0 ? 'inline-block' : 'none';
+            }
         });
     }
     
     // Показать уведомление
     showNotification(message, type = 'success') {
+        // Удаляем старые уведомления
+        document.querySelectorAll('.alert.position-fixed').forEach(alert => {
+            if (alert.parentNode) {
+                alert.remove();
+            }
+        });
+        
         const notification = document.createElement('div');
         notification.className = `alert alert-${type} alert-dismissible fade show position-fixed`;
         notification.style.cssText = `
@@ -109,7 +120,7 @@ class Cart {
             box-shadow: 0 4px 6px rgba(0,0,0,0.1);
         `;
         notification.innerHTML = `
-            <i class="bi bi-check-circle me-2"></i>
+            <i class="bi ${type === 'success' ? 'bi-check-circle' : 'bi-info-circle'} me-2"></i>
             ${message}
             <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
         `;
@@ -157,5 +168,10 @@ document.addEventListener('DOMContentLoaded', () => {
 if (typeof module !== 'undefined' && module.exports) {
     module.exports = { cart, addToCart, removeFromCart, getCart, clearCart, updateCartCounter };
 } else {
-    window.CartManager = { cart, addToCart, removeFromCart, getCart, clearCart, updateCartCounter };
+    window.cart = cart;
+    window.addToCart = addToCart;
+    window.removeFromCart = removeFromCart;
+    window.getCart = getCart;
+    window.clearCart = clearCart;
+    window.updateCartCounter = updateCartCounter;
 }

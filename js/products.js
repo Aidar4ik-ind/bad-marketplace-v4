@@ -272,7 +272,7 @@ const productsData = [
     }
 ];
 
-// Функции оставить как были...
+// Функции
 const Products = {
     getAll: () => productsData,
     getById: (id) => productsData.find(p => p.id === id),
@@ -285,6 +285,14 @@ const Products = {
             p.description.toLowerCase().includes(q) ||
             p.tags.some(tag => tag.toLowerCase().includes(q))
         );
+    },
+    // Новый метод для получения всех уникальных тегов
+    getAllTags: () => {
+        const allTags = new Set();
+        productsData.forEach(product => {
+            product.tags.forEach(tag => allTags.add(tag));
+        });
+        return Array.from(allTags);
     }
 };
 
