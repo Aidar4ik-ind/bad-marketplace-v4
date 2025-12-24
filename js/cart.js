@@ -139,39 +139,32 @@ class Cart {
 const cart = new Cart();
 
 // Глобальные функции
-function addToCart(productId, quantity = 1) {
+window.addToCart = function(productId, quantity = 1) {
     return cart.add(productId, quantity);
-}
+};
 
-function removeFromCart(productId) {
+window.removeFromCart = function(productId) {
     return cart.remove(productId);
-}
+};
 
-function getCart() {
+window.getCart = function() {
     return cart.getAll();
-}
+};
 
-function clearCart() {
+window.clearCart = function() {
     return cart.clear();
-}
+};
 
-function updateCartCounter() {
+window.updateCartCounter = function() {
     return cart.updateCounter();
-}
+};
 
 // Инициализация при загрузке страницы
 document.addEventListener('DOMContentLoaded', () => {
     cart.updateCounter();
 });
 
-// Экспорт
+// Экспорт для Node.js (если нужно)
 if (typeof module !== 'undefined' && module.exports) {
     module.exports = { cart, addToCart, removeFromCart, getCart, clearCart, updateCartCounter };
-} else {
-    window.cart = cart;
-    window.addToCart = addToCart;
-    window.removeFromCart = removeFromCart;
-    window.getCart = getCart;
-    window.clearCart = clearCart;
-    window.updateCartCounter = updateCartCounter;
 }

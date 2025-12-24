@@ -178,8 +178,9 @@ function renderProducts(products, container) {
                         
                         <div class="d-flex justify-content-between align-items-center">
                             <span class="fw-bold text-primary h5 mb-0">${product.price} ₽</span>
-                            <button class="btn btn-sm btn-primary" 
-                                    onclick="event.preventDefault(); addToCart(${product.id})">
+                            <button class="btn btn-sm btn-primary add-to-cart-btn" 
+                                    data-id="${product.id}"
+                                    onclick="addToCart(${product.id}); event.preventDefault();">
                                 <i class="bi bi-cart-plus"></i>
                             </button>
                         </div>
@@ -190,18 +191,15 @@ function renderProducts(products, container) {
     `).join('');
 }
 
-// Функция добавления в корзину
-function addToCart(productId) {
-    if (window.cart && cart.add) {
-        cart.add(productId);
-        cart.showNotification('Товар добавлен в корзину!', 'success');
-        updateCartCounter();
-    }
-}
+// Делаем функции глобальными
+window.filterProducts = filterProducts;
+window.filterByTag = filterByTag;
+window.displayAllProducts = displayAllProducts;
+window.renderProducts = renderProducts;
 
-// Функция обновления счетчика корзины
-function updateCartCounter() {
+// Обновление счетчика корзины
+window.updateCartCounter = function() {
     if (window.cart && cart.updateCounter) {
         cart.updateCounter();
     }
-}
+};
