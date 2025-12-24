@@ -132,7 +132,7 @@
         </div>
     </footer>
 
-        <!-- Скрипты -->
+    <!-- Скрипты -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="js/products.js"></script>
     <script src="js/cart.js"></script>
@@ -171,8 +171,7 @@
                                     <a href="product-details.html?id=${product.id}" class="btn btn-sm btn-outline-primary me-1">
                                         <i class="bi bi-eye"></i>
                                     </a>
-                                    <button class="btn btn-sm btn-primary add-to-cart-btn-main" 
-                                            data-id="${product.id}">
+                                    <button class="btn btn-sm btn-primary" onclick="addToCart(${product.id})">
                                         <i class="bi bi-cart-plus"></i>
                                     </button>
                                 </div>
@@ -181,22 +180,10 @@
                     </div>
                 </div>
             `).join('');
-            
-            // Добавляем обработчики для кнопок на главной
-            document.querySelectorAll('.add-to-cart-btn-main').forEach(button => {
-                button.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    const productId = parseInt(this.getAttribute('data-id'));
-                    if (productId) {
-                        addProductToCart(productId);
-                    }
-                });
-            });
         }
 
-        // Функция для добавления в корзину (только для главной страницы)
-        function addProductToCart(productId) {
-            if (typeof window.addToCart === 'function') {
+        function addToCart(productId) {
+            if (typeof addToCart === 'function') {
                 window.addToCart(productId);
                 updateCartCounter();
                 showAlert('Товар добавлен в корзину!', 'success');
@@ -208,10 +195,9 @@
         }
 
         function updateCartCounter() {
-            if (typeof window.updateCartCounter === 'function') {
-                window.updateCartCounter();
-            } else if (window.cart && window.cart.updateCounter) {
-                window.cart.updateCounter();
+            if (window.cart && cart.getCount) {
+                const count = cart.getCount();
+                document.getElementById('cartCounter').textContent = count;
             }
         }
 
