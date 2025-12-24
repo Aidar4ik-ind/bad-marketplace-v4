@@ -173,8 +173,8 @@
                                     <a href="product-details.html?id=${product.id}" class="btn btn-sm btn-outline-primary me-1">
                                         <i class="bi bi-eye"></i>
                                     </a>
-                                    <button class="btn btn-sm btn-primary add-to-cart-main" 
-                                            data-id="${product.id}">
+                                    <button class="btn btn-sm btn-primary" 
+                                            onclick="window.addToCart(${product.id}); event.preventDefault(); updateCartCounter(); showAlert('Товар добавлен в корзину!', 'success');">
                                         <i class="bi bi-cart-plus"></i>
                                     </button>
                                 </div>
@@ -183,32 +183,6 @@
                     </div>
                 </div>
             `).join('');
-            
-            // Добавляем обработчики для кнопок на главной
-            document.querySelectorAll('.add-to-cart-main').forEach(button => {
-                button.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    const productId = parseInt(this.getAttribute('data-id'));
-                    if (productId) {
-                        addProductToCart(productId);
-                    }
-                });
-            });
-        }
-
-        // Функция для добавления в корзину (только для главной страницы)
-        function addProductToCart(productId) {
-            if (typeof window.addToCart === 'function') {
-                window.addToCart(productId);
-                updateCartCounter();
-                showAlert('Товар добавлен в корзину!', 'success');
-            } else if (window.cart && window.cart.add) {
-                window.cart.add(productId);
-                updateCartCounter();
-                showAlert('Товар добавлен в корзину!', 'success');
-            } else {
-                console.error('Функция addToCart не найдена');
-            }
         }
 
         function updateCartCounter() {
