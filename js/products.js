@@ -1,4 +1,4 @@
-// products.js с ВАШИМИ сгенерированными картинками
+// products.js с локальными картинками
 const productsData = [
     {
         id: 1,
@@ -7,7 +7,7 @@ const productsData = [
         price: 1290,
         tags: ["магний", "стресс", "сон", "нервы"],
         category: "stress",
-        image: "https://unlimbot.hb.ru-msk.vkcloud-storage.ru/image/1/1d0d91df-6f78-4aa2-8cb9-57251fd3fa4d-e0c15c044b2f4d48af9253c5e15e3a78.png"
+        image: "assets/images/1.png"
     },
     {
         id: 2,
@@ -16,7 +16,7 @@ const productsData = [
         price: 890,
         tags: ["сон", "мелатонин", "релаксация"],
         category: "sleep",
-        image: "https://unlimbot.hb.ru-msk.vkcloud-storage.ru/image/1/4ad0fa80-daa0-4b1b-84b1-eba9af073999-27ecf70db31f4c7e8895ec3dd401f9cc.png"
+        image: "assets/images/2.png"
     },
     {
         id: 3,
@@ -25,7 +25,7 @@ const productsData = [
         price: 1500,
         tags: ["энергия", "бодрость", "витамины"],
         category: "energy",
-        image: "https://unlimbot.hb.ru-msk.vkcloud-storage.ru/image/1/e19acad9-95ce-458f-b046-4c5db591fab1-da21b31d0f2947768f558fdf9796b15a.png"
+        image: "assets/images/3.png"
     },
     {
         id: 4,
@@ -34,7 +34,7 @@ const productsData = [
         price: 1100,
         tags: ["иммунитет", "витамин C", "цинк"],
         category: "immunity",
-        image: "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=400&h=300&fit=crop" // Оставьте Unsplash или сгенерируйте свою
+        image: "assets/images/4.png"
     },
     {
         id: 5,
@@ -43,7 +43,7 @@ const productsData = [
         price: 950,
         tags: ["детокс", "очищение", "печень"],
         category: "detox",
-        image: "https://images.unsplash.com/photo-1551632436-cbf8dd35adfa?w=400&h=300&fit=crop" // Оставьте Unsplash или сгенерируйте свою
+        image: "assets/images/5.png"
     },
     {
         id: 6,
@@ -52,7 +52,7 @@ const productsData = [
         price: 1300,
         tags: ["стресс", "адаптоген"],
         category: "stress",
-        image: "https://unlimbot.hb.ru-msk.vkcloud-storage.ru/image/1/8bfaa896-e63a-4a8e-b7e2-f2b5a04d4b44-48df32f65869439db4632fd1553f700f.png"
+        image: "assets/images/6.png"
     },
     {
         id: 7,
@@ -61,7 +61,7 @@ const productsData = [
         price: 950,
         tags: ["стресс", "концентрация"],
         category: "stress",
-        image: "https://unlimbot.hb.ru-msk.vkcloud-storage.ru/image/1/e10e2185-55e7-4c16-b729-1ae7914f2e57-cfd473e2c6554d30a197a92aacb345ee.png"
+        image: "assets/images/7.png"
     },
     {
         id: 8,
@@ -70,7 +70,7 @@ const productsData = [
         price: 1800,
         tags: ["энергия", "антиоксидант"],
         category: "energy",
-        image: "https://unlimbot.hb.ru-msk.vkcloud-storage.ru/image/1/d7fd8139-3ecc-41f7-8fec-07f3fd59e912-f971cc08dbcf48f585972a33fd541f7d.png"
+        image: "assets/images/8.png"
     },
     {
         id: 9,
@@ -79,7 +79,7 @@ const productsData = [
         price: 1400,
         tags: ["энергия", "женьшень"],
         category: "energy",
-        image: "https://unlimbot.hb.ru-msk.vkcloud-storage.ru/image/1/c124445c-1266-4e5d-b8c1-9570ac63b0e4-044c84d4b9ad4456b38969a8d49f8eba.png"
+        image: "assets/images/9.png"
     },
     {
         id: 10,
@@ -88,7 +88,7 @@ const productsData = [
         price: 890,
         tags: ["энергия", "витамины"],
         category: "energy",
-        image: "https://unlimbot.hb.ru-msk.vkcloud-storage.ru/image/1/5a360a77-3296-48f0-ad6f-533a69d772cd-cfad4f4fd4ce4d418e1a78267d834ea6.png"
+        image: "assets/images/10.png"
     },
     {
         id: 11,
@@ -97,7 +97,7 @@ const productsData = [
         price: 650,
         tags: ["иммунитет", "антиоксидант"],
         category: "immunity",
-        image: "https://unlimbot.hb.ru-msk.vkcloud-storage.ru/image/1/14c3ba00-6e6c-40f8-ac0c-e4f91b6e067a-6a5e5e88955144418057d8fd1d98f2af.png"
+        image: "assets/images/11.png"
     },
     {
         id: 12,
@@ -106,7 +106,7 @@ const productsData = [
         price: 820,
         tags: ["иммунитет", "цинк"],
         category: "immunity",
-        image: "https://unlimbot.hb.ru-msk.vkcloud-storage.ru/image/1/bc24696d-62bd-41e2-8e76-a16f61887d56-c8b514bfe972461faeb7200828359ca3.png"
+        image: "assets/images/12.png"
     },
     {
         id: 13,
@@ -115,7 +115,7 @@ const productsData = [
         price: 1350,
         tags: ["иммунитет", "пробиотик"],
         category: "immunity",
-        image: "https://unlimbot.hb.ru-msk.vkcloud-storage.ru/image/1/bbcd7c9a-d3c0-4e1e-a239-c4449f675a5c-a8f537efe9b640bcaa1c13b7adb6501f.png"
+        image: "assets/images/13.png"
     },
     {
         id: 14,
@@ -124,7 +124,7 @@ const productsData = [
         price: 1600,
         tags: ["суставы", "хондроитин"],
         category: "joints",
-        image: "https://unlimbot.hb.ru-msk.vkcloud-storage.ru/image/1/b1334b43-136c-478a-bda5-84172461879a-d100a9a1478e4936bcfa2d983cb78d2c.png"
+        image: "assets/images/14.png"
     },
     {
         id: 15,
@@ -133,7 +133,7 @@ const productsData = [
         price: 1750,
         tags: ["суставы", "коллаген"],
         category: "joints",
-        image: "https://unlimbot.hb.ru-msk.vkcloud-storage.ru/image/1/1f99d467-cf67-4071-9293-9d02316a5e39-dad2a38608784cf2b25edd0f96cb1480.png"
+        image: "assets/images/15.png"
     },
     {
         id: 16,
@@ -142,7 +142,7 @@ const productsData = [
         price: 1250,
         tags: ["омега-3", "сердце"],
         category: "joints",
-        image: "https://unlimbot.hb.ru-msk.vkcloud-storage.ru/image/1/96ead005-eb01-4886-a2df-28e451797ae5-a930646f9c6643a29723f8119c82cffb.png"
+        image: "assets/images/16.png"
     },
     {
         id: 17,
@@ -151,7 +151,7 @@ const productsData = [
         price: 480,
         tags: ["пищеварение", "клетчатка"],
         category: "digestion",
-        image: "https://unlimbot.hb.ru-msk.vkcloud-storage.ru/image/1/ec171b80-331d-4dc2-9a50-4c00ee439e93-6c28f05ab9784b698472ec20d2218e72.png"
+        image: "assets/images/17.png"
     },
     {
         id: 18,
@@ -160,7 +160,7 @@ const productsData = [
         price: 890,
         tags: ["пищеварение", "ферменты"],
         category: "digestion",
-        image: "https://unlimbot.hb.ru-msk.vkcloud-storage.ru/image/1/726d9957-c60b-4dc5-ab59-1b8bd9371cec-834d0b6685b74a8199f7f768ed62f68b.png"
+        image: "assets/images/18.png"
     },
     {
         id: 19,
@@ -169,7 +169,7 @@ const productsData = [
         price: 980,
         tags: ["суставы", "куркумин"],
         category: "joints",
-        image: "https://unlimbot.hb.ru-msk.vkcloud-storage.ru/image/1/b63faeb1-f44b-4976-9f30-fe26e94c57e7-f94cfb80bfcc4993872439843cb24e76.png"
+        image: "assets/images/19.png"
     },
     {
         id: 20,
@@ -178,9 +178,8 @@ const productsData = [
         price: 1450,
         tags: ["суставы", "глюкозамин"],
         category: "joints",
-        image: "https://unlimbot.hb.ru-msk.vkcloud-storage.ru/image/1/d0a65574-d1ab-4dec-9107-8cafcd70991b-14dfe5a37ae546e682ed7e67c10e1a33.png"
+        image: "assets/images/20.png"
     },
-    // Для оставшихся 10 товаров оставьте Unsplash или сгенерируйте картинки
     {
         id: 21,
         name: "Эхинацея Форте",
@@ -188,7 +187,7 @@ const productsData = [
         price: 590,
         tags: ["иммунитет", "эхинацея"],
         category: "immunity",
-        image: "https://images.unsplash.com/photo-1519823551278-64ac92734fb1?w=400&h=300&fit=crop"
+        image: "assets/images/21.png"
     },
     {
         id: 22,
@@ -197,7 +196,7 @@ const productsData = [
         price: 1100,
         tags: ["детокс", "печень"],
         category: "detox",
-        image: "https://images.unsplash.com/photo-1547592180-85f173990554?w=400&h=300&fit=crop"
+        image: "assets/images/22.png"
     },
     {
         id: 23,
@@ -206,7 +205,7 @@ const productsData = [
         price: 720,
         tags: ["пищеварение", "имбирь"],
         category: "digestion",
-        image: "image//photo-1608039755401-742074f0548d?w=400&h=300&fit=crop"
+        image: "assets/images/23.png"
     },
     {
         id: 24,
@@ -215,7 +214,7 @@ const productsData = [
         price: 1250,
         tags: ["энергия", "мозг"],
         category: "energy",
-        image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&h=300&fit=crop"
+        image: "assets/images/24.png"
     },
     {
         id: 25,
@@ -224,7 +223,7 @@ const productsData = [
         price: 1050,
         tags: ["стресс", "настроение"],
         category: "stress",
-        image: "https://images.unsplash.com/photo-1598899134739-24c46f58b8c0?w=400&h=300&fit=crop"
+        image: "assets/images/25.png"
     },
     {
         id: 26,
@@ -233,7 +232,7 @@ const productsData = [
         price: 750,
         tags: ["сон", "травы"],
         category: "sleep",
-        image: "https://images.unsplash.com/photo-1553531384-397c80973a0b?w=400&h=300&fit=crop"
+        image: "assets/images/26.png"
     },
     {
         id: 27,
@@ -242,7 +241,7 @@ const productsData = [
         price: 920,
         tags: ["сон", "магний"],
         category: "sleep",
-        image: "https://images.unsplash.com/photo-1553531889-56cc480ac5cb?w=400&h=300&fit=crop"
+        image: "assets/images/27.png"
     },
     {
         id: 28,
@@ -251,7 +250,7 @@ const productsData = [
         price: 1200,
         tags: ["стресс", "нервы"],
         category: "stress",
-        image: "https://images.unsplash.com/photo-1559056199-641a0ac8b55e?w=400&h=300&fit=crop&crop=center"
+        image: "assets/images/28.png"
     },
     {
         id: 29,
@@ -260,7 +259,7 @@ const productsData = [
         price: 850,
         tags: ["стресс", "магний"],
         category: "stress",
-        image: "https://images.unsplash.com/photo-1559056199-641a0ac8b55e?w=400&h=300&fit=crop"
+        image: "assets/images/29.png"
     },
     {
         id: 30,
@@ -269,7 +268,7 @@ const productsData = [
         price: 1100,
         tags: ["сон", "качество сна"],
         category: "sleep",
-        image: "https://images.unsplash.com/photo-1553531889-56cc480ac5cb?w=400&h=300&fit=crop"
+        image: "assets/images/30.png"
     }
 ];
 
